@@ -14,3 +14,11 @@ if [ "$ARCH" = "x86_64" ]; then ARCH="amd64"; elif [ "$ARCH" = "aarch64" ]; then
 curl -Lo ~/.docker/cli-plugins/docker-buildx "https://github.com/docker/buildx/releases/download/${BUILDX_VERSION}/buildx-${BUILDX_VERSION}.linux-${ARCH}"
 chmod +x ~/.docker/cli-plugins/docker-buildx
 docker buildx version
+
+
+
+#DOCKER BUILDX INSTALLATION COMMANDS
+mkdir -p ~/.docker/cli-plugins && \
+curl -SL https://github.com/docker/buildx/releases/download/v0.17.0/buildx-v0.17.0.linux-$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/') \
+-o ~/.docker/cli-plugins/docker-buildx && \
+chmod +x ~/.docker/cli-plugins/docker-buildx
